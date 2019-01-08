@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebSamuel90/cool-gif.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebSamuel90/cool-gif/issues"
+  },
+  "homepage": "https://github.com/WebSamuel90/cool-gif#readme"
+}
