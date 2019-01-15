@@ -1,3 +1,13 @@
+// Third-party libraries and packages.
+// @import 'node_modules/sanitize.css/sanitize';
+
+// Project specific styles.
+@import 'project/_project';
+@import 'components/_components';
+
 body {
-    background-color: hotpink
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
 }

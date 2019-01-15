@@ -1,7 +1,7 @@
 const browsersync = require('rollup-plugin-browsersync')
 const postcss = require('rollup-plugin-postcss')
 const postcssNormalize = require('postcss-normalize')
-
+const autoprefixer = require('autoprefixer')
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isDevelopment = isProduction === false;
@@ -15,7 +15,8 @@ module.exports = {
   plugins: [
     postcss({
       plugins: [
-        postcssNormalize()
+        postcssNormalize(),
+        autoprefixer()
       ],
       extract: true
     }),

@@ -1,0 +1,39 @@
+.giphy {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+
+    & .search {
+        display: flex;
+        flex-direction: row;
+    }
+
+    & input[type=text], select {
+        width: 100%;
+        padding: 12px 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 2px solid rgb(141, 17, 172);
+        box-sizing: border-box;
+      }
+
+     & button[type=submit] {
+        width: 4%;
+        background-color: rgb(141, 17, 172);
+        color: white;
+        padding: 14px 14px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+      }
+      
+      & button[type=submit]:hover {
+        background-color: #45a049;
+      }    
+}
+
+
+  
+  
