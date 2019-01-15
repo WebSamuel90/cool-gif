@@ -16,8 +16,14 @@
   "homepage": "https://github.com/WebSamuel90/cool-gif#readme",
   "dependencies": {
     "node-sass": "^4.11.0",
+    "postcss-normalize": "^7.0.1",
     "rollup": "^1.1.0",
     "rollup-plugin-browsersync": "^1.0.0",
-    "rollup-plugin-postcss": "^1.6.3"
+    "rollup-plugin-postcss": "^1.6.3",
+    "browserslist": [
+      ">0.25%",
+      "not ie 11",
+      "not op_mini all"
+    ]
   }
 }
