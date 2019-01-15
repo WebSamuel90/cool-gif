@@ -1,4 +1,6 @@
 const browsersync = require('rollup-plugin-browsersync')
+const postcss = require('rollup-plugin-postcss')
+
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isDevelopment = isProduction === false;
@@ -10,6 +12,7 @@ module.exports = {
     format: 'iife'
   },
   plugins: [
+    postcss(extract = true),
     (isDevelopment && browsersync({server: 'public'}))
   ]
 };
