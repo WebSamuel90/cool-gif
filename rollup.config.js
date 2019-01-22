@@ -2,6 +2,7 @@ const browsersync = require('rollup-plugin-browsersync')
 const postcss = require('rollup-plugin-postcss')
 const postcssNormalize = require('postcss-normalize')
 const autoprefixer = require('autoprefixer')
+const cssNano = require('cssnano')
 const babel = require('rollup-plugin-babel')
 const nodeResolve = require('rollup-plugin-node-resolve')
 const commonJs = require('rollup-plugin-commonjs')
@@ -21,15 +22,16 @@ module.exports = {
     babel(),
     nodeResolve(),
     commonJs(),
-    (isDevelopment && filesize()),
-    (isProduction && terser()),
     postcss({
       plugins: [
         postcssNormalize(),
-        autoprefixer()
+        autoprefixer(),
+        cssNAno()
       ],
       extract: true
     }),
+    (isDevelopment && filesize()),
+    (isProduction && terser()),
     (isDevelopment && browsersync({server: 'public'}))
   ]
 };
