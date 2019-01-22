@@ -6,6 +6,7 @@ const babel = require('rollup-plugin-babel')
 const nodeResolve = require('rollup-plugin-node-resolve')
 const commonJs = require('rollup-plugin-commonjs')
 const {terser} = require('rollup-plugin-terser')
+const filesize = require('rollup-plugin-filesize')
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isDevelopment = isProduction === false;
@@ -20,6 +21,7 @@ module.exports = {
     babel(),
     nodeResolve(),
     commonJs(),
+    (isDevelopment && filesize()),
     (isProduction && terser()),
     postcss({
       plugins: [
