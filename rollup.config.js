@@ -16,7 +16,8 @@ module.exports = {
   input: 'src/scripts/index.js',
   output: {
     file: 'public/giphy.js',
-    format: 'iife'
+    format: 'iife',
+    sourcemap: isDevelopment
   },
   plugins: [
     babel(),
@@ -26,8 +27,8 @@ module.exports = {
       plugins: [
         postcssNormalize(),
         autoprefixer(),
-        cssNAno()
-      ],
+        (isDevelopment && cssNano())
+      ].filter(Boolean),
       extract: true
     }),
     (isDevelopment && filesize()),
