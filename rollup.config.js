@@ -1,13 +1,14 @@
-const browsersync = require('rollup-plugin-browsersync')
-const postcss = require('rollup-plugin-postcss')
-const postcssNormalize = require('postcss-normalize')
-const autoprefixer = require('autoprefixer')
-const cssNano = require('cssnano')
-const babel = require('rollup-plugin-babel')
-const nodeResolve = require('rollup-plugin-node-resolve')
-const commonJs = require('rollup-plugin-commonjs')
-const {terser} = require('rollup-plugin-terser')
-const filesize = require('rollup-plugin-filesize')
+import browsersync from 'rollup-plugin-browsersync'
+import postcss from 'rollup-plugin-postcss'
+import postcssNormalize from 'postcss-normalize'
+import autoprefixer from 'autoprefixer'
+import cssNano from 'cssnano'
+import babel from 'rollup-plugin-babel'
+import nodeResolve from 'rollup-plugin-node-resolve'
+import commonJs from 'rollup-plugin-commonjs'
+import {terser} from 'rollup-plugin-terser'
+import filesize from 'rollup-plugin-filesize'
+import injectEnv from 'rollup-plugin-inject-env';
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isDevelopment = isProduction === false;
@@ -23,6 +24,7 @@ module.exports = {
     babel(),
     nodeResolve(),
     commonJs(),
+    injectEnv(),
     postcss({
       plugins: [
         postcssNormalize(),

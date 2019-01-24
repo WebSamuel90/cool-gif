@@ -2,4 +2,8 @@
 
 import '../styles/index.scss';
 
-console.log('Hello World');
+import giphy from './giphy';
+
+giphy(searchQuery).then(variable => {
+  
+});
