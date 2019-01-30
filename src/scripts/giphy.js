@@ -10,7 +10,7 @@ const search = searchQuery => {
   };
 
   // Fetch GIFs with your API key and search query.
-  fetch(`https://api.giphy.com/v1/gifs/search?${search.stringify(query)}`)
+  return fetch(`https://api.giphy.com/v1/gifs/search?${queryString.stringify(query)}`)
     .then(response => response.json()) // Parse the JSON data.
 
 };
